@@ -9,7 +9,8 @@ end
 
 # Base
 gem 'rails', '~> 5.1.0'
-# gem 'devise'
+gem 'devise'
+gem 'config' #環境ごとに情報を管理する
 # gem 'paperclip'
 # gem 'activeadmin' 管理画面の見た目がダサイから要検討
 # gem 'sidekiq' バックエンド処理が必要か？

@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: reproject48_production
-  username: reproject48
-  password: <%= ENV['REPROJECT48_DATABASE_PASSWORD'] %>
+  database: heroku_d2160c9b209200c
+  username: b0f4b229f6cea7
+  password: <%= ENV['DATABASE_PASSWORD'] %>

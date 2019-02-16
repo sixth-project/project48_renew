@@ -65,4 +65,7 @@ Rails.application.configure do
   :password => Settings.gmail[:password], #gmailパスワード
   :authentication => 'login',
 }
+
+ Paperclip.options[:log] = true
+ Paperclip.options[:log_command] = true
 end

@@ -10,8 +10,11 @@ end
 # Base
 gem 'rails', '~> 5.1.0'
 gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'rails-i18n', '~> 5.1'
 gem 'config' #環境ごとに情報を管理する
-# gem 'paperclip'
+gem 'paperclip'
 # gem 'activeadmin' 管理画面の見た目がダサイから要検討
 # gem 'sidekiq' バックエンド処理が必要か？
 # gem 'bcrypt'
@@ -38,6 +41,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rb-readline'#brew updateによるReadlineのバージョン変更によって起きたエラーのfixの為に追加
   gem 'annotate' # tableのschemaを確認できる。
   gem 'bullet' # N+1
   gem 'listen'

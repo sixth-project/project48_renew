@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
- <p><%= image_tag current_user.avatar.url, style: "width: 50px" %></p>
+ <p><%= image_tag @user.avatar.url, style: "width: 50px" %></p>
  <li>Hello, <%= @user.name %>さん</li>
  <li><%= link_to "プロフィール編集", edit_user_registration_path %> </li>
  <li><%= link_to "新規投稿", "#" %></li>

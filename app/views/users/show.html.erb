@@ -1,0 +1,5 @@
+<% provide(:title, @user.name) %>
+<p>写真 :<%= image_tag @user.avatar.url, style: "width: 250px" %></p>
+<p>名前 : <%= @user.name %></p>
+<p>メールアドレス : <%= @user.email %></p>
+<p>プロフィール : <%= simple_format(@user.profile) %></p>

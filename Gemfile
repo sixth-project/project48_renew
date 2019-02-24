@@ -14,6 +14,8 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'rails-i18n', '~> 5.1'
 gem 'config' #環境ごとに情報を管理する
+gem 'rails-i18n', '~> 5.1'
+gem 'webpacker'
 gem 'paperclip'
 gem 'activeadmin'
 # gem 'sidekiq' バックエンド処理が必要か？

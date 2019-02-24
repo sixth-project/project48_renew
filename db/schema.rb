@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20190223135101) do
     t.datetime "avatar_updated_at"
     t.text "profile"
     t.integer "role", default: 0, null: false
+
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true

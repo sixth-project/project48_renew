@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, notice: '管理者画面へのアクセス権限がありません。'
   end
 
-
-
-
-
   protected
 
   def configure_permitted_parameters #Deviseでサインイン、プロフィールeditする際は以下added_attrsの属性のみ。

@@ -8,6 +8,21 @@
   </div>
 
   <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, placeholder: "ユーザー名"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email" %>
+  </div>
+
+  <div class="field">
     <%= f.label :写真 %><br />
     <%= f.file_field :avatar %>
   </div>

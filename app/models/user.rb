@@ -31,9 +31,10 @@
 #
 
 class User < ApplicationRecord
-
   enum role: { user: 0, admin: 1 } #ユーザーの権限管理・通常のユーザーの場合はデフォルトで0に設定。
-  
+  attr_accessor :login
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :trackable, :timeoutable,
          :lockable
@@ -44,6 +45,7 @@ class User < ApplicationRecord
   validates :profile, length: { maximum: 255 } #プロフィールの文字数制限
 
   attr_accessor :login
+
 
   def login=(login) #ユーザーnameでもログイン/signupできるようにloginを定義
     @login = login

@@ -31,21 +31,21 @@
 #
 
 class User < ApplicationRecord
+
+  # ＊＊ユーザーのログイン機構
   enum role: { user: 0, admin: 1 } #ユーザーの権限管理・通常のユーザーの場合はデフォルトで0に設定。
   attr_accessor :login
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :trackable, :timeoutable,
          :lockable
-
+  # **Userプロフィール設定
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' },#アバターの写真サイズ
                     default_url: '/missing.png'
   validates_attachment_content_type :avatar, content_type: %r{\Aimage\/.*\z}
   validates :profile, length: { maximum: 255 } #プロフィールの文字数制限
 
-  attr_accessor :login
-
+  # **Userポスト設定**
+  has_many :posts, dependent: :destroy
 
   def login=(login) #ユーザーnameでもログイン/signupできるようにloginを定義
     @login = login

@@ -1,2 +1,2 @@
   <li><%= "#{users.name}" %></li>
-  <p><%= image_tag users.avatar, size: '80x80' %></p>
+  <p><%= link_to image_tag(users.avatar, size: '80x80'), user_path(users.id) %></p>

@@ -3,6 +3,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  
 
   rescue_from SecurityError do |_exception|
     redirect_to root_url, notice: '管理者画面へのアクセス権限がありません。'

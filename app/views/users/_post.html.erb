@@ -1,0 +1,12 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<h1>ユーザーの投稿</h1>
+<%= post.title %>
+<p><%= post.content %></p>
+
+<% if user_signed_in? && @user.id == current_user.id %>
+ <p><%= link_to "Edit", edit_post_path(post.id) %></p>
+ <p><%= link_to "投稿を削除する", post,  method: :delete, data: { confirm: "本当に削除しますか？"} %></p>
+<% end %>

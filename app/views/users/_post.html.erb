@@ -3,7 +3,10 @@
 <% end %>
 
 <h1>ユーザーの投稿</h1>
-<%= post.title %>
+<p><%= post.title %></p>
+<% if post.photo.exists? %>
+<p><%= image_tag post.photo.url, style: "width: 150px" %></p>
+<% end %>
 <p><%= post.content %></p>
 
 <% if user_signed_in? && @user.id == current_user.id %>

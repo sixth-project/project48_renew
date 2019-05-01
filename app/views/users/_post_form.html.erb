@@ -1,5 +1,9 @@
-  <%= form_with model: Post.new, local: true do |f| %>
+<%= form_with model: Post.new, local: true do |f| %>
+   <%#= render 'shared/error_messages'%>
    <%= f.text_field :title, placeholder: "タイトル" %>
+   <%= f.file_field :photo, id: "pictureInput" %>
+   <div id="target">
+   </div>
    <%= f.text_area :content, placeholder: "ここに本文" %>
    <%= f.submit "投稿" %>
-  <% end %>
+<% end %>

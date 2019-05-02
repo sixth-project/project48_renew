@@ -2,7 +2,6 @@
   <p>アバター :<%= image_tag @user.avatar.url(:thumb)%></p>
   <p>名前 : <%= @user.name %></p>
   <p>プロフィール : <%= simple_format(@user.profile) %></p>
-
 <% if user_signed_in? && @user.id == current_user.id %>
  <%= render 'users/post_form' %>
 <% end %>

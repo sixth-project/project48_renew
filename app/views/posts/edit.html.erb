@@ -1,6 +1,8 @@
 <h1>Edit Page</h1>
 <%= form_with model: @post, local: true do |f| %>
  <%= f.text_field :title, placeholder: "タイトル" %>
+ <%= f.file_field :photo %>
+ <p><%= image_tag @post.photo.url %></p>
  <%= f.text_area :content, placeholder: "ここに本文" %>
  <%= f.submit "変更する" %>
 <% end %>

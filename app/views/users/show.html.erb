@@ -1,9 +1,7 @@
 <% provide(:title, @user.name) %>
-  <p>写真 :<%= image_tag @user.avatar.url, style: "width: 100px" %></p>
+  <p>アバター :<%= image_tag @user.avatar.url(:thumb)%></p>
   <p>名前 : <%= @user.name %></p>
-  <p>メールアドレス : <%= @user.email %></p>
   <p>プロフィール : <%= simple_format(@user.profile) %></p>
-
 <% if user_signed_in? && @user.id == current_user.id %>
  <%= render 'users/post_form' %>
 <% end %>
